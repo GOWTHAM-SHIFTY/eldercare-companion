@@ -135,6 +135,24 @@ function App() {
           </Box>
         </Box>
       </Box>
+      {/* ✅ GLOBAL WATERMARK FOOTER (Visible Across Entire App) */}
+      <Box
+        sx={{
+          position: "fixed",
+          bottom: 8,
+          left: 0,
+          right: 0,
+          textAlign: "center",
+          fontSize: "13px",
+          color: "gray",
+          opacity: 0.25,
+          pointerEvents: "none",
+          userSelect: "none",
+          zIndex: 5000,
+        }}
+      >
+        Created by Gowtham
+      </Box>
     </ThemeProvider>
   );
 }

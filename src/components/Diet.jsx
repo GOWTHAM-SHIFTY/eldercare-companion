@@ -152,26 +152,51 @@ export default function Diet() {
                   <Box
                     key={i}
                     sx={{
-                      p: 2,
+                      p: 2.5,
                       borderRadius: 3,
-                      mb: 2,
+                      mb: 2.5,
                       bgcolor: (theme) =>
-                        theme.palette.mode === "light" ? "#f5f5f5" : "#1f1f1f",
+                        theme.palette.mode === "light" ? "#f7f9fc" : "#1d1f24",
+                      border: "1px solid rgba(0,0,0,0.08)",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 1.2,
                     }}
                   >
-                    <Typography fontWeight="bold">{food.name}</Typography>
-                    <Typography variant="caption" color="text.secondary">
+                    {/* Food Name */}
+                    <Typography
+                      fontWeight="bold"
+                      fontSize="1.05rem"
+                      sx={{ lineHeight: 1.3 }}
+                    >
+                      {food.name}
+                    </Typography>
+
+                    {/* Benefit Text */}
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{ lineHeight: 1.4 }}
+                    >
                       {food.benefit}
                     </Typography>
 
-                    <Button
-                      variant="contained"
-                      size="small"
-                      sx={{ mt: 1 }}
-                      onClick={() => useSuggestion(food, meal.category)}
-                    >
-                      Add to Today
-                    </Button>
+                    {/* Add Button */}
+                    <Box mt={1.5}>
+                      <Button
+                        variant="contained"
+                        size="small"
+                        fullWidth
+                        sx={{
+                          py: 1,
+                          fontWeight: 600,
+                          borderRadius: "10px",
+                        }}
+                        onClick={() => useSuggestion(food, meal.category)}
+                      >
+                        Add to Today
+                      </Button>
+                    </Box>
                   </Box>
                 ))}
               </CardContent>
