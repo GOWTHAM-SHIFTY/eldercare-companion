@@ -25,17 +25,17 @@ function App() {
     localStorage.setItem("theme-mode", newMode);
   };
 
-  // ✅ GLOBAL THEME OVERRIDE (Glass UI + Soft Blue Theme)
+  // ✅ Global theme for Glass UI
   const theme = createTheme({
     palette: {
       mode,
       background: {
-        default: mode === "light" ? "#E8F3FF" : "#0A1220", // ✅ SOFT BLUE / NAVY
+        default: mode === "light" ? "#E8F3FF" : "#0A1220",
         paper:
-          mode === "light" ? "rgba(255,255,255,0.45)" : "rgba(20,28,48,0.45)", // ✅ GLASS EFFECT
+          mode === "light" ? "rgba(255,255,255,0.45)" : "rgba(20,28,48,0.45)",
       },
       primary: {
-        main: "#4A8DFF", // Fresh modern blue
+        main: "#4A8DFF",
       },
       text: {
         primary: mode === "light" ? "#0D1B2A" : "#E7ECF3",
@@ -43,7 +43,6 @@ function App() {
       },
     },
 
-    // ✅ Global UI Component Styles
     components: {
       MuiCard: {
         styleOverrides: {
@@ -103,27 +102,37 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
-      {/* ✅ Full App Background */}
+      {/* ✅ ✅ GLOBAL SCALE WRAPPER (75% Zoom Out) */}
       <Box
         sx={{
-          minHeight: "100vh",
-          backgroundColor: "background.default",
-          transition: "0.3s",
+          transform: "scale(0.65)",
+          transformOrigin: "top left",
+          width: "153.84%",
+          height: "153.84%",
         }}
       >
-        {/* ✅ Header with Theme Toggle */}
-        <Header mode={mode} toggleTheme={toggleTheme} />
+        {/* ✅ App Background */}
+        <Box
+          sx={{
+            minHeight: "100vh",
+            backgroundColor: "background.default",
+            transition: "0.3s",
+          }}
+        >
+          {/* ✅ Header with Theme Toggle */}
+          <Header mode={mode} toggleTheme={toggleTheme} />
 
-        {/* ✅ Bottom Navigation */}
-        <Navbar tab={tab} setTab={setTab} />
+          {/* ✅ Bottom Navigation */}
+          <Navbar tab={tab} setTab={setTab} />
 
-        {/* ✅ Page Content */}
-        <Box p={3}>
-          {tab === 0 && <Dashboard />}
-          {tab === 1 && <Diet />}
-          {tab === 2 && <Hydration />}
-          {tab === 3 && <Medicine />}
-          {tab === 4 && <Report />}
+          {/* ✅ Page Content */}
+          <Box p={3}>
+            {tab === 0 && <Dashboard />}
+            {tab === 1 && <Diet />}
+            {tab === 2 && <Hydration />}
+            {tab === 3 && <Medicine />}
+            {tab === 4 && <Report />}
+          </Box>
         </Box>
       </Box>
     </ThemeProvider>

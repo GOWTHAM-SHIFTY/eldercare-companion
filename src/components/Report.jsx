@@ -56,7 +56,7 @@ function Report() {
     ],
     emergencyContact: {
       caretaker: "Suresh (Son)",
-      phone: "+91 98765 43210",
+      phone: "+91 9########0",
       doctor: "Dr. Aravind – Geriatric Specialist",
       doctorPhone: "+91 90000 12345",
     },
