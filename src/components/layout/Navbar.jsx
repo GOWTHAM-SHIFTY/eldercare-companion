@@ -31,9 +31,7 @@ function Navbar({ tab, setTab }) {
           centered
           TabIndicatorProps={{
             sx: {
-              height: "4px",
-              borderRadius: "4px",
-              backgroundColor: "#4A8DFF", // ✅ Highlight color
+              display: "none",
             },
           }}
           sx={{
